@@ -92,17 +92,17 @@ $('.models-slider').slick({
     nextArrow:"<button type='button' class='slick-next'><svg class=\"icon\"><use xlink:href=\"#ic-chevron\"></use></svg></button>",
 });
 $('.popup-close').on('click', function (e) {
+
     $('.popup').removeClass('active');
     $('body').removeClass('scroll');
     $('.popup-image__slider').slick("unslick");
 });
-$(document).mouseup(function (e){
+$('.popup').mouseup(function (e){
     var overlay = $('.popup .popup-centered');
     if (!overlay.is(e.target)
         && overlay.has(e.target).length === 0) {
         $('.popup').removeClass('active');
         $('body').removeClass('scroll');
-        // $('.popup-image__slider').slick("unslick");
     }
 });
 
@@ -128,81 +128,3 @@ $('.custom-file-preview-del').on('click', function (e) {
 $('.upload-photo, .photo-main').on('click', function (e) {
     $('.photo-wrap .photo-item:first-child .file-input').trigger('click');
 });
-
-
-// function CustomUpload(element) {
-//     let ref = this;
-//     this.imageFileArray = [];
-//     this.element = $(element);
-//
-//     this.element.on('change', async function (e) {
-//         let arrayImage = e.target.files;
-//         let start = ref.imageFileArray.length;
-//         let validExt = ['image/jpg', 'image/jpeg', 'image/png'];
-//
-//         $.each(arrayImage, (index, item) => {
-//             if ($.inArray(item.type,validExt) != -1) {
-//                 item.index = start + index;
-//                 ref.imageFileArray.push(item);
-//                 let fr = new FileReader();
-//                 let imageItem = '';
-//                 fr.onload = function (event) {
-//                     imageItem += `
-//                     <div class="photo-upload"
-//                     style="background-image: url('${event.target.result}')">
-//                     <span data-key="${item.index}" class="custom-file-preview-del">
-//                     <svg class="icon"><use xlink:href="#ic-close"></use></svg></span>
-//                     </div>
-//                     `;
-//                     $('div [data-image = '+ item.index +']').css('background-image', 'url('+ event.target.result +')').find('.custom-file-preview-del').removeClass('hidden');
-//                     $('div [data-image = '+ item.index +']').find('.add-img').addClass('hidden');
-//                     $('.photo-main .icon').addClass('hidden');
-//
-//                     // $('.photo-wrap .photo-item').remove();
-//
-//                     // for (let i = 0; i < arrayImage.length; i++) {
-//                     //     $('div [data-image = '+ i +']').css('background-image', 'url('+ event.target.result +')').find('.custom-file-preview-del').removeClass('hidden');
-//                     //     // console.log('item'+ i , event.target.result);
-//                     //     console.log(arrayImage);
-//                     // }
-//                     // $('.photo-wrap').append(imageItem);
-//                     // $('.photo-main').css('background-image', 'url('+ event.target.result +')').find('.icon').addClass('hidden');
-//                 }
-//                 fr.readAsDataURL(item);
-//
-//             }
-//             else{
-//                 alert('This is not an image');
-//             }
-//             //Array images
-//             console.log(ref.imageFileArray);
-//         });
-//
-//     });
-//     this.element.parent().on('click', '.custom-file-preview-del', function (e) {
-//         e.preventDefault();
-//         let del = $(this);
-//         let id = del.data('key');
-//         let index = ref.imageFileArray.findIndex(item => {
-//             return item.index == id;
-//         });
-//         ref.imageFileArray.splice(index, 1);
-//          //del.parent().remove();
-//          del.parent().css('background-image', '');
-//          del.addClass('hidden');
-//          del.next().removeClass('hidden');
-//          del.next().next().removeClass('hidden');
-//         //Array after deleted
-//
-//         console.log(ref.imageFileArray);
-//         if($(ref.imageFileArray).length <= 0){
-//             $('.photo-main').css('background-image', '').find('.icon').removeClass('hidden');
-//         }
-//     });
-// }
-// const upload = new CustomUpload('#fileImage');
-// $('.photo-item .add-img, .photo-main').on('click', function (e) {
-//    $('.upload-mob').trigger('click');
-// });
-
-
