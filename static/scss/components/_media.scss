@@ -274,6 +274,12 @@
   .payment-item__wrap{
     padding: 25px 30px 30px;
   }
+  .popup{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px;
+  }
 }
 @media screen and ( min-width: 1200px ){
   .photo-container__item{

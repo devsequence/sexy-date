@@ -102,7 +102,7 @@ $(document).mouseup(function (e){
         && overlay.has(e.target).length === 0) {
         $('.popup').removeClass('active');
         $('body').removeClass('scroll');
-        //$('.popup-image__slider').slick("unslick");
+        // $('.popup-image__slider').slick("unslick");
     }
 });
 
