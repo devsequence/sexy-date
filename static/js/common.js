@@ -79,8 +79,7 @@ $('.location-list').slick({
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1,
+                slidesToShow: 3,
                 variableWidth: true,
             }
         },

@@ -366,7 +366,7 @@ button {
       background-image: url("../images/svg/ic-heart.svg");
       background-repeat: no-repeat;
       background-size: cover;
-      z-index: 1;
+      z-index: 2;
       transform: scale(-1, 1); }
     .footer-logo a {
       position: relative;
@@ -541,7 +541,7 @@ button {
   padding: 22px 10px 17px;
   background: #F8F2FF; }
   .location-wrap .slick-list {
-    width: 95%;
+    width: 100%;
     margin: 0 auto; }
   .location-wrap .slick-arrow {
     background: transparent;
@@ -551,11 +551,11 @@ button {
     .location-wrap .slick-arrow .icon {
       fill: #ACAFC1; }
   .location-wrap .slick-prev {
-    left: -10px;
+    left: -20px;
     transform: rotate(180deg);
     margin-top: -13px; }
   .location-wrap .slick-next {
-    right: -10px; }
+    right: -20px; }
   .location-wrap .slick-prev.slick-disabled {
     opacity: 0 !important; }
 
@@ -1271,6 +1271,11 @@ input[data-state="valid"] {
     max-height: 520px;
     height: 500px; } }
 
+@media screen and (min-width: 768px) {
+  .location-wrap .slick-list {
+    width: 100%;
+    margin: 0 -5px; } }
+
 @media screen and (min-width: 992px) {
   .header-logo {
     width: calc(100% - 150px);
@@ -1307,6 +1312,11 @@ input[data-state="valid"] {
       z-index: -1;
       background: url("../images/svg/ic-heart.svg") no-repeat;
       background-size: cover; }
+  .header-btn:after {
+    z-index: 1; }
+  .header-btn .btn {
+    position: relative;
+    z-index: 2; }
   .header-nav__btn {
     display: none; }
   .header-nav {
