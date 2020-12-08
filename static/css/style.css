@@ -1454,6 +1454,8 @@ input[data-state="valid"] {
     right: 0; } }
 
 @media screen and (min-width: 1200px) {
+  .photo-container__item:first-of-type .step-btn {
+    margin: 0  0 0 auto; }
   .photo-container__item:first-of-type .photo-container__info {
     display: flex;
     flex-wrap: wrap; }
