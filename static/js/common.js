@@ -1,9 +1,13 @@
 $('.nav-btn').on('click', function (e) {
     var $this = $(this);
      $this.find('.icon').toggleClass('hidden');
-     $('.header-mobile').toggleClass('is-open');
+     $('.header').toggleClass('is-open');
+     $('.header-logo').toggleClass('hidden');
+     $('.header-btn .btn').toggleClass('btn-white').toggleClass('btn-red');
      $('body').toggleClass('scroll');
 });
+
+
 $('.step-btn').on('click', function (e) {
     var $this = $(this);
     var $thisData = $this.data('step');
@@ -69,21 +73,17 @@ $('.location-list').slick({
     prevArrow:"<button type='button' class='slick-prev'><svg class=\"icon\"><use xlink:href=\"#ic-arrow\"></use></svg></button>",
     nextArrow:"<button type='button' class='slick-next'><svg class=\"icon\"><use xlink:href=\"#ic-arrow\"></use></svg></button>",
     infinite: false,
-    slidesToShow: 8,
     variableWidth: true,
+    slidesToShow: 8,
     responsive: [
         {
             breakpoint: 480,
             settings: {
                 slidesToShow: 4,
+                slidesToScroll: 1,
+                variableWidth: true,
             }
         },
-        {
-            breakpoint: 768,
-            settings: {
-
-            }
-        }
     ]
 });
 
